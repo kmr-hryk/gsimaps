@@ -29713,6 +29713,7 @@ GSI.GSIMaps = L.Class.extend( {
 				oReader.onload = L.bind(function(e){
 					if(e.target.readyState == FileReader.DONE){
 						var v = e.target.result;
+						v = window.convertSIMA2GeoJSON(v, fname);
 						this._sakuzuList.loadFromText(v, fname);
 					}
 				},this );
